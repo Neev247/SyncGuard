@@ -17,5 +17,3 @@ data/
 node_modules/
 .railway/
 .tools/
-decisions.md
-flow.md
