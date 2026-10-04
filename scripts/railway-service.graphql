@@ -1,0 +1,16 @@
+mutation ConfigureSyncService($serviceId: String!, $environmentId: String!) {
+  serviceInstanceUpdate(
+    serviceId: $serviceId
+    environmentId: $environmentId
+    input: {
+      dockerfilePath: "Dockerfile"
+      startCommand: "python -m app"
+      healthcheckPath: "/healthz"
+      healthcheckTimeout: 120
+      numReplicas: 1
+      restartPolicyType: ON_FAILURE
+      restartPolicyMaxRetries: 3
+      overlapSeconds: 0
+    }
+  )
+}
